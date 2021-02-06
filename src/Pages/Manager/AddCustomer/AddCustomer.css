@@ -1,0 +1,15 @@
+.form-container {
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+}
+
+.form-container > Form {
+    width: 80vh;
+}
+
+.form-group {
+    width: 100vh !important;
+}
