@@ -37,8 +37,11 @@ const AuthProvider = (props) => {
       } 
     },
     logout: () => {
-          dispatch({ type: LOGOUT, payload: null });
-      },
+        dispatch({ type: LOGOUT, payload: null });
+    },
+    setDefaultAccount: (acc) => {
+        dispatch({ type: DEFAULT_ACCOUNT, payload: acc });
+    }
   };
 
   return (

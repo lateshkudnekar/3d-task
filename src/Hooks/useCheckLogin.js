@@ -6,8 +6,10 @@ export default function useCheckLogin() {
     let history = useHistory()
     const { authState={}, authActions } = React.useContext(AuthContext);
     useEffect(() => {
+        console.log('------');
        if(!authState.user) {
             history.replace('/customer')
        }
-    },[])
+    })
+    return
 }

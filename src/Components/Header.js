@@ -5,9 +5,7 @@ import { AuthContext } from '../Context/authContext';
 export default function Header() {
     const { authState, authActions } = React.useContext(AuthContext);
     let history = useHistory();
-    useEffect(() => {
-        
-    }, [authState])
+    
     const logout = () => {
         console.log(authState);
         authActions.logout()
