@@ -22,8 +22,12 @@ export default function Deposit() {
 
             let transaction = {
                 datetime:new Date().toISOString(),
-                type:"Debit",
+                type:"Credit",
                 amount:amount
+            }
+            if(!defaultAccount) {
+                alert.show('You dont have account, Please contact bank manager!!')
+                return
             }
             let {balance=0} = defaultAccount
             defaultAccount.transactions.push(transaction)
@@ -41,7 +45,6 @@ export default function Deposit() {
                 }
                 return c;
             })
-            console.log("user>",user);
             window.localStorage.setItem('customers',JSON.stringify(customers));
             authActions.setDefaultAccount(defaultAccount)
             alert.show('Deposit Succesfull!!')
@@ -51,7 +54,7 @@ export default function Deposit() {
         <div className={"form-container"}>
             <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 <Form.Group >
-                    <Form.Label>Customer Name</Form.Label>
+                    <Form.Label>Amount to be deposited</Form.Label>
                     <Form.Control  type="number" onChange={(e) => setAmount(e.target.value)} value={amount} min={1} required />
                 </Form.Group>
                 

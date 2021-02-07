@@ -3,7 +3,10 @@ import './Customers.css'
 import ReactPaginate from 'react-paginate';
 import 'reactjs-popup/dist/index.css';
 import EditCustomerModal from '../../../Components/EditCustomerModal';
+import { useAlert } from 'react-alert'
+
 export default function Customers() {
+    let alert = useAlert()
     const perPage = 5;
     const [customers, setCustomers] = useState([])
     const [refresh, setRefresh] = useState(false)
@@ -21,6 +24,7 @@ export default function Customers() {
         cusObj = JSON.parse(cusObj).filter(c => c.id!=customer.id)
         window.localStorage.setItem('customers', JSON.stringify(cusObj))
         setRefresh(!refresh)
+        alert.show("Customer Deleted!")
     }
 
     const handlePageClick = (data) => {

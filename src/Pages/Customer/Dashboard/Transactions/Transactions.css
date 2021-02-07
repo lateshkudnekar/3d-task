@@ -1,0 +1,29 @@
+table {
+    margin-top: 2rem;
+}
+
+.cusData {
+    cursor: pointer;
+}
+
+ul > li {
+    padding: .5rem 1rem;
+    background-color: #a3d2ca;
+    margin: .5rem;
+    border-radius: 1rem;
+    color: #FFF;
+}
+ul > li > a {
+    cursor: pointer;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.active {
+    background-color: #5eaaa8;
+}
+.disabled > a {
+    cursor: not-allowed;
+}

@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import './AddCustomer.css'
 import { Button, Form, InputGroup, Col } from "react-bootstrap";
 import uuid from 'react-uuid'
+import { useAlert } from 'react-alert'
 
 export default function AddCustomer() {
-
+    let alert = useAlert()
     const [validated, setValidated] = useState(false);
 
     const [firstName, setFirstName] = useState("");
@@ -33,6 +34,7 @@ export default function AddCustomer() {
            setFirstName("") 
            setLastName("") 
            setPostCode("") 
+           alert.show("New Customer created!")
         }
     };
     return (

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import uuid from 'react-uuid'
-
+import { useAlert } from "react-alert";
 export default function OpenAccount() {
+    let alert = useAlert()
     const [customer, setCustomer] = useState("")
     const [currency, setCurrency] = useState("")
     const [validated, setValidated] = useState(false)
@@ -45,6 +46,8 @@ export default function OpenAccount() {
            window.localStorage.setItem('customers',JSON.stringify(cusObj))
            setCustomer("")
            setCurrency("")
+           alert.show("Created new account!")
+
         }
     }
     return (

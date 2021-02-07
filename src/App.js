@@ -9,8 +9,8 @@ function App() {
   const options = {
     position: positions.BOTTOM_CENTER,
     timeout: 3000,
-    offset: '30px',
-    transition: transitions.SCALE
+    offset: '100px',
+    transition: transitions.SCALE,
   }
   return (
     <div className="App">
